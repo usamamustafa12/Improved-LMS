@@ -1,0 +1,30 @@
+CREATE TABLE Users (
+    UserID INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(100),
+	Contact NVARCHAR(50),
+    Role NVARCHAR(50), -- Generic role for polymorphism
+  
+);
+
+CREATE TABLE Books (
+    BookID INT IDENTITY(1,1) PRIMARY KEY,  -- Auto-incremented BookID
+    Title VARCHAR(255) NOT NULL,
+    Author VARCHAR(255) NOT NULL,
+    Quantity INT NOT NULL
+);
+
+
+CREATE TABLE Borrowers (
+    UserID INT IDENTITY(1,1) PRIMARY KEY,  -- Auto-incremented UserID
+    Name VARCHAR(255) NOT NULL,
+    Contact VARCHAR(255) NOT NULL,
+    Address VARCHAR(255) NOT NULL
+);
+
+
+CREATE TABLE AdminStaff (
+    UserID INT IDENTITY(1,1) PRIMARY KEY,  -- Auto-incremented UserID
+    Name VARCHAR(255) NOT NULL,
+    Contact VARCHAR(255) NOT NULL,
+    Department VARCHAR(255) NOT NULL
+);
